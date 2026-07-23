@@ -8,6 +8,8 @@ estático vía GitHub Pages bajo `www.jarillalabs.com`.
 ```
 /                              → index.html  (hub que lista todas las apps)
 /time2bar/privacidad/          → Política de privacidad de Time2Bar
+/time2bar/eliminar-cuenta/     → Eliminación de cuenta y datos de Time2Bar
+/flipbots/privacidad/          → Política de privacidad de FlipBots
 ```
 
 Las URLs son limpias (sin `.html`) porque cada documento es un `index.html` dentro
@@ -15,6 +17,7 @@ de su propia carpeta. Ejemplo de URL pública final:
 
 ```
 https://www.jarillalabs.com/time2bar/privacidad/
+https://www.jarillalabs.com/flipbots/privacidad/
 ```
 
 ## Añadir una nueva app
