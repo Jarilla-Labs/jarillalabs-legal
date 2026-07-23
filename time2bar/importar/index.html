@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plantillas y skill oficial para importar rutinas e historial de entrenamiento en Time2Bar.">
+  <title>Importar entrenamientos — Time2Bar</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #181b22;
+      --surface-2: #20242d;
+      --text: #e8eaed;
+      --muted: #a9afb8;
+      --accent: #4ade80;
+      --accent-ink: #07150c;
+      --border: #2a2e37;
+      --warning: #fbbf24;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(74, 222, 128, 0.11), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 28px 20px 80px; }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 30px;
+    }
+    .brand { color: var(--text); font-weight: 800; text-decoration: none; letter-spacing: -0.02em; }
+    .back { color: var(--muted); font-size: 0.9rem; text-decoration: none; }
+    .hero { padding: 34px 0 44px; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    h1 {
+      max-width: 720px;
+      margin: 14px 0 14px;
+      font-size: clamp(2.2rem, 7vw, 4.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+    .lead { max-width: 650px; color: var(--muted); font-size: 1.08rem; margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 17px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+    .button:hover { transform: translateY(-1px); }
+    section { padding-top: 44px; }
+    h2 { margin: 0 0 8px; font-size: 1.65rem; letter-spacing: -0.025em; }
+    h3 { margin: 0 0 5px; font-size: 1.04rem; }
+    .section-copy { color: var(--muted); margin: 0 0 20px; max-width: 670px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .card {
+      background: rgba(24, 27, 34, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 19px;
+    }
+    .card p { margin: 5px 0 0; color: var(--muted); font-size: 0.92rem; }
+    .card .button { width: 100%; margin-top: 16px; }
+    .steps { display: grid; gap: 10px; counter-reset: steps; }
+    .step {
+      counter-increment: steps;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 12px;
+      align-items: start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .step::before {
+      content: counter(steps);
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(74, 222, 128, 0.12);
+      color: var(--accent);
+      font-weight: 850;
+    }
+    .step p { margin: 3px 0 0; color: var(--muted); font-size: 0.92rem; }
+    .notice {
+      border-left: 3px solid var(--warning);
+      background: rgba(251, 191, 36, 0.07);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 16px;
+      color: var(--muted);
+      margin-top: 14px;
+      font-size: 0.92rem;
+    }
+    code { background: var(--surface-2); padding: 2px 6px; border-radius: 5px; color: var(--text); }
+    footer {
+      margin-top: 52px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    @media (max-width: 650px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 18px; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="nav">
+      <a class="brand" href="/">Jarilla Labs</a>
+      <a class="back" href="/">← Volver</a>
+    </nav>
+
+    <header class="hero">
+      <span class="eyebrow">Time2Bar Transfer v1</span>
+      <h1>Empieza con tu progreso real.</h1>
+      <p class="lead">
+        Trae a Time2Bar tus ejercicios, rutinas e historial mediante CSV o JSON.
+        La app te enseña una vista previa, mezcla sin reemplazar y permite deshacer el lote.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="downloads/time2bar-import-skill.zip" download>Descargar skill</a>
+        <a class="button" href="#plantillas">Usar plantillas CSV</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Convertir mis datos con IA</h2>
+      <p class="section-copy">
+        El mismo ZIP sigue el estándar Agent Skills y sirve para convertir notas,
+        tablas o exportaciones en un JSON que Time2Bar puede revisar e importar.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>ChatGPT y Codex</h3>
+          <p>En una cuenta compatible: Plugins → Skills → Create → Upload from your computer. Selecciona el ZIP sin descomprimir.</p>
+          <a class="button" href="https://help.openai.com/en/articles/20001066-skills-in-chatgpt" target="_blank" rel="noopener">Guía oficial de OpenAI ↗</a>
+        </article>
+        <article class="card">
+          <h3>Claude</h3>
+          <p>Activa ejecución de código y ve a Customize → Skills → + Create skill → Upload a skill. Selecciona el ZIP.</p>
+          <a class="button" href="https://support.claude.com/es/articles/12512180-usar-habilidades-en-claude" target="_blank" rel="noopener">Guía oficial de Anthropic ↗</a>
+        </article>
+      </div>
+      <div class="notice">
+        La disponibilidad de Skills depende del plan y de los permisos del workspace.
+        Si no aparece esa sección, descarga el esquema y el ejemplo de abajo, adjúntalos
+        junto a tu tracking y pide que se devuelva únicamente JSON compatible.
+      </div>
+    </section>
+
+    <section>
+      <h2>Del tracking a Time2Bar</h2>
+      <div class="steps">
+        <div class="step">
+          <div>
+            <h3>Instala el skill</h3>
+            <p>Descarga <code>time2bar-import-skill.zip</code> y súbelo desde la sección Skills de tu asistente.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>Pega o adjunta tu historial</h3>
+            <p>Puedes usar notas, CSV, una hoja de cálculo exportada o texto. Revisa los avisos; el skill no debe inventar fechas ni valores.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>Guarda el JSON</h3>
+            <p>Pide “convierte esto para Time2Bar” y descarga o copia el objeto JSON resultante.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>Revisa e importa</h3>
+            <p>En Time2Bar abre Ajustes → Datos → Importar entrenamientos. Elige el archivo, revisa la vista previa y confirma.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plantillas">
+      <h2>Plantillas CSV</h2>
+      <p class="section-copy">
+        Alternativa directa sin IA. Puedes importar las dos plantillas por separado.
+        Usa una fila por ejercicio planificado y una fila por serie realizada.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>Rutinas</h3>
+          <p>Nombre de rutina, orden, ejercicio, series, objetivos y descansos.</p>
+          <a class="button" href="downloads/time2bar-routine-template.csv" download>Descargar plantilla</a>
+        </article>
+        <article class="card">
+          <h3>Historial</h3>
+          <p>Fecha, sesión, ejercicio, serie, reps, lastre, holds, RPE y notas.</p>
+          <a class="button" href="downloads/time2bar-history-template.csv" download>Descargar plantilla</a>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contrato abierto</h2>
+      <p class="section-copy">
+        Para migraciones avanzadas o integraciones propias, Time2Bar Transfer v1 es
+        un JSON versionado, documentado y validado antes de escribir datos.
+      </p>
+      <div class="actions">
+        <a class="button" href="schemas/transfer-v1.json">Ver JSON Schema</a>
+        <a class="button" href="downloads/time2bar-transfer-example.json" download>Descargar ejemplo</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Privacidad</h2>
+      <p class="section-copy">
+        Los CSV y JSON se procesan localmente dentro de Time2Bar. Si utilizas ChatGPT,
+        Codex o Claude para convertir tu tracking, el contenido que envíes será tratado
+        por ese proveedor según su configuración y política. No incluyas datos médicos,
+        contraseñas ni información personal innecesaria.
+      </p>
+    </section>
+
+    <footer>
+      © 2026 Jarilla Labs · <a href="/time2bar/privacidad/">Privacidad de Time2Bar</a>
+    </footer>
+  </main>
+</body>
+</html>
