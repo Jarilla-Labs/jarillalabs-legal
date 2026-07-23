@@ -7,6 +7,7 @@ estático vía GitHub Pages bajo `www.jarillalabs.com`.
 
 ```
 /                              → index.html  (hub que lista todas las apps)
+/time2bar/importar/            → Plantillas, skill y contrato de importación
 /time2bar/privacidad/          → Política de privacidad de Time2Bar
 /time2bar/eliminar-cuenta/     → Eliminación de cuenta y datos de Time2Bar
 /flipbots/privacidad/          → Política de privacidad de FlipBots
@@ -17,6 +18,7 @@ de su propia carpeta. Ejemplo de URL pública final:
 
 ```
 https://www.jarillalabs.com/time2bar/privacidad/
+https://www.jarillalabs.com/time2bar/importar/
 https://www.jarillalabs.com/flipbots/privacidad/
 ```
 

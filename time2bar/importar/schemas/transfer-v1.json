@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.jarillalabs.com/time2bar/importar/schemas/transfer-v1.json",
+  "title": "Time2Bar Transfer v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "version", "exercises", "routines", "workouts", "warnings"],
+  "properties": {
+    "format": { "const": "time2bar-transfer" },
+    "version": { "const": 1 },
+    "source": { "type": "string", "maxLength": 64 },
+    "exportedAt": { "type": "string", "format": "date-time" },
+    "units": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "load": { "enum": ["kg", "lb", "unknown"] },
+        "duration": { "const": "seconds" }
+      }
+    },
+    "exercises": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "metric"],
+        "properties": {
+          "externalId": { "type": "string", "maxLength": 200 },
+          "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "aliases": { "type": "array", "maxItems": 20, "items": { "type": "string", "maxLength": 120 } },
+          "metric": { "enum": ["reps", "hold_seconds", "load_kg", "attempt"] }
+        }
+      }
+    },
+    "routines": {
+      "type": "array",
+      "maxItems": 200,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "exercises"],
+        "properties": {
+          "externalId": { "type": "string", "maxLength": 200 },
+          "name": { "type": "string", "minLength": 1, "maxLength": 160 },
+          "summary": { "type": "string", "maxLength": 500 },
+          "exercises": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["name", "order"],
+              "properties": {
+                "externalExerciseId": { "type": "string", "maxLength": 200 },
+                "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+                "order": { "type": "integer", "minimum": 0 },
+                "performanceType": { "enum": ["reps", "hold", "attempt"] },
+                "setCount": { "type": "integer", "minimum": 1, "maximum": 50 },
+                "targetRepsMin": { "type": "integer", "minimum": 0, "maximum": 1000 },
+                "targetRepsMax": { "type": "integer", "minimum": 0, "maximum": 1000 },
+                "targetHoldSeconds": { "type": "number", "minimum": 0, "maximum": 86400 },
+                "targetLoadKg": { "type": "number", "minimum": 0, "maximum": 1000 },
+                "restSeconds": { "type": "number", "minimum": 0, "maximum": 3600 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "workouts": {
+      "type": "array",
+      "maxItems": 20000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "exercises"],
+        "properties": {
+          "externalId": { "type": "string", "maxLength": 200 },
+          "date": { "type": "string", "format": "date-time" },
+          "name": { "type": "string", "maxLength": 160 },
+          "durationSeconds": { "type": "number", "minimum": 0, "maximum": 86400 },
+          "rpe": { "type": "number", "minimum": 1, "maximum": 10 },
+          "notes": { "type": "string", "maxLength": 2000 },
+          "exercises": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["name", "sets"],
+              "properties": {
+                "externalExerciseId": { "type": "string", "maxLength": 200 },
+                "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+                "sets": {
+                  "type": "array",
+                  "maxItems": 100,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "setIndex": { "type": "integer", "minimum": 0 },
+                      "status": { "enum": ["completed", "skipped"] },
+                      "reps": { "type": "number", "minimum": 0, "maximum": 10000 },
+                      "loadKg": { "type": "number", "minimum": 0, "maximum": 1000 },
+                      "holdSeconds": { "type": "number", "minimum": 0, "maximum": 86400 },
+                      "success": { "type": "boolean" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "warnings": { "type": "array", "maxItems": 500, "items": { "type": "string", "maxLength": 500 } }
+  }
+}
