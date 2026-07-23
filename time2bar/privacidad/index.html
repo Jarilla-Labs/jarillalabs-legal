@@ -82,166 +82,135 @@
   <div class="wrap">
     <header>
       <h1>Política de Privacidad de Time2Bar</h1>
-      <p class="meta">Última actualización: 13 de junio de 2026</p>
+      <p class="meta">Última actualización: 23 de julio de 2026</p>
     </header>
 
     <p>
       Esta Política de Privacidad describe cómo <strong>Time2Bar</strong> (en adelante,
       «la App», «nosotros») trata la información cuando usas nuestra aplicación de
-      temporizador y gestión de entrenamientos de calistenia. Al usar Time2Bar aceptas
-      las prácticas descritas en este documento.
+      temporizador y seguimiento de entrenamientos de calistenia.
     </p>
 
     <div class="card">
-      <strong>Resumen rápido:</strong> Time2Bar funciona principalmente en tu dispositivo.
-      Solo enviamos datos a servicios externos cuando activas funciones concretas:
-      iniciar sesión, sincronización en la nube, compras premium o la generación de
-      rutinas con inteligencia artificial. No vendemos tus datos personales.
+      <strong>Resumen rápido:</strong> la versión pública actual de Time2Bar funciona
+      localmente. Tus rutinas, entrenamientos, notas y progresos permanecen en tu
+      dispositivo. No crea cuentas nuevas, no sincroniza con la nube, no incluye compras
+      dentro de la App y no envía Analytics ni informes de Crashlytics. No vendemos tus
+      datos personales.
     </div>
 
     <h2>1. Quién es el responsable</h2>
     <p>
-      El responsable del tratamiento de los datos es el desarrollador de Time2Bar.
+      El responsable de Time2Bar es <strong>Jarilla Labs</strong>.
       Para cualquier consulta relacionada con tu privacidad puedes contactarnos en:
       <a href="mailto:cherrejim@gmail.com">cherrejim@gmail.com</a>.
     </p>
 
-    <h2>2. Qué datos tratamos y con qué finalidad</h2>
-
-    <h3>2.1. Datos almacenados en tu dispositivo</h3>
+    <h2>2. Datos guardados en tu dispositivo</h2>
+    <p>Time2Bar almacena localmente la información necesaria para sus funciones:</p>
+    <ul>
+      <li>Rutinas, ejercicios, sesiones y temporizadores.</li>
+      <li>Historial de entrenamiento, resultados, notas, etiquetas y progreso.</li>
+      <li>Preferencias de apariencia, voz, vibración y funcionamiento del timer.</li>
+      <li>Copias de seguridad que tú decides exportar o restaurar.</li>
+    </ul>
     <p>
-      La mayor parte de tu información —rutinas, temporizadores, sesiones de
-      entrenamiento, historial de entrenos, objetivos de habilidades y preferencias—
-      se guarda <strong>localmente en tu dispositivo</strong> (almacenamiento local del
-      navegador / aplicación). Estos datos no salen de tu dispositivo a menos que actives
-      la sincronización en la nube.
+      Estos datos no salen del dispositivo por defecto y permanecen allí hasta que los
+      borres desde Android o desinstales Time2Bar.
     </p>
 
-    <h3>2.2. Cuenta e inicio de sesión</h3>
-    <p>
-      Si decides iniciar sesión, usamos <strong>Firebase Authentication</strong> con
-      Acceso con Google. En ese caso tratamos tu identificador de usuario, tu dirección de
-      correo electrónico y tu nombre asociados a la cuenta de Google que utilices, con la
-      finalidad de identificarte y habilitar la sincronización entre dispositivos.
-    </p>
-
-    <h3>2.3. Sincronización en la nube (función premium)</h3>
-    <p>
-      Si activas la sincronización, tus rutinas, sesiones, historial de entrenamientos y
-      objetivos se almacenan en <strong>Google Firebase / Cloud Firestore</strong> para
-      poder sincronizarlos entre tus dispositivos. Cada registro incluye marcas de tiempo
-      y un identificador de dispositivo para resolver conflictos de sincronización.
-    </p>
-
-    <h3>2.4. Compras premium</h3>
-    <p>
-      Las suscripciones y compras dentro de la App se gestionan a través de
-      <strong>RevenueCat</strong> y de la facturación de <strong>Google Play</strong>.
-      Estos servicios procesan el estado de tu suscripción y un identificador anónimo de
-      compra. <strong>No recibimos ni almacenamos los datos de tu tarjeta o método de
-      pago</strong>; los gestiona Google Play directamente.
-    </p>
-
-    <h3>2.5. Generación de rutinas con inteligencia artificial</h3>
-    <p>
-      Si usas la función de generación de rutinas con IA, el texto que escribas se envía a
-      la API de <strong>Google Gemini</strong> para convertir tu descripción en una rutina
-      con bloques de entrenamiento. Te recomendamos no incluir datos personales sensibles
-      en esas descripciones.
-    </p>
-
-    <h3>2.6. Notificaciones y permisos del dispositivo</h3>
-    <p>
-      La App puede programar <strong>notificaciones locales</strong> para avisarte de las
-      transiciones entre bloques del temporizador (incluso en segundo plano) y mantener la
-      pantalla activa durante el entreno. Estas notificaciones se generan en tu dispositivo
-      y no implican el envío de datos a terceros.
-    </p>
-
-    <h2>3. Servicios de terceros</h2>
-    <p>Time2Bar utiliza los siguientes proveedores, cada uno con su propia política de privacidad:</p>
+    <h2>3. Datos que no recoge la versión pública actual</h2>
     <table>
       <thead>
-        <tr><th>Servicio</th><th>Finalidad</th><th>Política</th></tr>
+        <tr><th>Superficie</th><th>Comportamiento actual</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td>Google Firebase (Authentication, Firestore)</td>
-          <td>Inicio de sesión y sincronización en la nube</td>
-          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Ver política</a></td>
+          <td>Cuenta y sincronización</td>
+          <td>No se crean cuentas nuevas ni se envían rutinas o historial a Firebase.</td>
         </tr>
         <tr>
-          <td>RevenueCat</td>
-          <td>Gestión de suscripciones y compras</td>
-          <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Ver política</a></td>
+          <td>Analítica y errores</td>
+          <td>No se envían eventos de Analytics ni informes de Crashlytics.</td>
         </tr>
         <tr>
-          <td>Google Play Billing</td>
-          <td>Procesamiento de pagos</td>
-          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Ver política</a></td>
+          <td>Compras</td>
+          <td>No se incluye el SDK de RevenueCat ni se ofrecen compras nuevas.</td>
         </tr>
         <tr>
-          <td>Google Gemini API</td>
-          <td>Generación de rutinas con IA</td>
-          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Ver política</a></td>
+          <td>Publicidad</td>
+          <td>No usamos el identificador publicitario ni mostramos publicidad.</td>
         </tr>
       </tbody>
     </table>
 
-    <h2>4. Base legal del tratamiento</h2>
-    <p>Tratamos tus datos sobre las siguientes bases legales (RGPD):</p>
+    <h2>4. Permisos y funciones locales</h2>
     <ul>
-      <li><strong>Ejecución de un contrato:</strong> para proporcionarte las funciones de la App que solicitas (cuenta, sincronización, compras).</li>
-      <li><strong>Consentimiento:</strong> cuando activas funciones opcionales como la sincronización en la nube o la generación con IA.</li>
-      <li><strong>Interés legítimo:</strong> para garantizar el funcionamiento, la seguridad y la mejora de la App.</li>
-    </ul>
-
-    <h2>5. Conservación de los datos</h2>
-    <p>
-      Los datos locales permanecen en tu dispositivo hasta que los elimines o desinstales
-      la App. Los datos sincronizados en la nube se conservan mientras mantengas tu cuenta
-      activa. Cuando eliminas un elemento, este se marca como borrado y se elimina de la
-      sincronización entre tus dispositivos.
-    </p>
-
-    <h2>6. Tus derechos</h2>
-    <p>De acuerdo con el RGPD y otras normativas aplicables, tienes derecho a:</p>
-    <ul>
-      <li>Acceder a tus datos personales.</li>
-      <li>Rectificar datos inexactos.</li>
-      <li>Solicitar la supresión de tus datos («derecho al olvido»).</li>
-      <li>Oponerte o limitar el tratamiento.</li>
-      <li>Solicitar la portabilidad de tus datos.</li>
-      <li>Retirar tu consentimiento en cualquier momento.</li>
+      <li><strong>Notificaciones:</strong> avisos locales de los cambios de fase del timer.</li>
+      <li><strong>Alarmas y recordatorios:</strong> puntualidad de esos avisos con el dispositivo en reposo.</li>
+      <li><strong>Vibración, voz y pantalla activa:</strong> feedback durante el entrenamiento.</li>
     </ul>
     <p>
-      Puedes ejercer estos derechos eliminando los datos desde la propia App, cerrando tu
-      cuenta o escribiéndonos a
-      <a href="mailto:cherrejim@gmail.com">cherrejim@gmail.com</a>.
+      Estas funciones se ejecutan en el dispositivo. Puedes consultar o modificar sus
+      permisos desde Ajustes de Time2Bar y desde los ajustes de Android.
     </p>
 
-    <h2>7. Seguridad</h2>
+    <h2>5. Exportación y soporte</h2>
     <p>
-      Aplicamos medidas técnicas razonables para proteger tu información. La comunicación
-      con los servicios en la nube se realiza mediante conexiones cifradas (HTTPS/TLS).
-      Ningún sistema es 100% seguro, pero trabajamos para proteger tus datos.
+      Compartir un historial o una copia de seguridad solo ocurre tras una acción explícita
+      tuya. El archivo pasa entonces a la aplicación o destino que elijas. Si escribes a
+      soporte, tu proveedor de correo tratará el contenido del mensaje. No incluyas
+      contraseñas, datos médicos ni copias completas salvo que sean necesarias y te las
+      solicitemos expresamente.
     </p>
 
-    <h2>8. Privacidad de los menores</h2>
+    <h2>6. Usuarios de versiones beta anteriores</h2>
+    <p>
+      Algunas betas anteriores permitieron cuenta, sincronización y Premium. La versión
+      pública actual no activa esos servicios, pero puedes solicitar la eliminación de una
+      cuenta o de datos cloud anteriores mediante nuestro
+      <a href="/time2bar/eliminar-cuenta/">procedimiento de borrado</a>.
+    </p>
+
+    <h2>7. Conservación y tus derechos</h2>
+    <p>
+      Los datos locales permanecen en tu dispositivo hasta que los borres. Si conservamos
+      datos de una cuenta beta anterior, puedes solicitar su acceso, rectificación,
+      supresión, limitación, oposición o portabilidad escribiendo a
+      <a href="mailto:cherrejim@gmail.com">cherrejim@gmail.com</a>. También puedes retirar
+      un consentimiento previo y reclamar ante la autoridad de protección de datos que te
+      corresponda.
+    </p>
+    <p>
+      Aplicamos medidas técnicas razonables para proteger los datos bajo nuestro control.
+      Ningún sistema es completamente seguro, por lo que recomendamos proteger el acceso a
+      tu dispositivo y guardar los backups en un lugar de confianza.
+    </p>
+
+    <h2>8. Google Play y enlaces externos</h2>
+    <p>
+      Google Play trata los datos necesarios para distribuir, instalar y actualizar la
+      App conforme a su propia
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad</a>.
+      Los enlaces externos que abras se rigen por la política del sitio de destino.
+    </p>
+
+    <h2>9. Privacidad de los menores</h2>
     <p>
       Time2Bar está dirigida a personas mayores de 13 años. No recopilamos de forma
       consciente datos personales de menores de 13 años. Si crees que un menor nos ha
       proporcionado datos personales, contáctanos y los eliminaremos.
     </p>
 
-    <h2>9. Cambios en esta política</h2>
+    <h2>10. Cambios en esta política</h2>
     <p>
       Podemos actualizar esta Política de Privacidad ocasionalmente. Publicaremos cualquier
-      cambio en esta misma página y actualizaremos la fecha de «Última actualización». Te
-      recomendamos revisarla periódicamente.
+      cambio en esta página y modificaremos la fecha de «Última actualización». Si una
+      versión futura reactivase cuenta, nube, compras o telemetría, actualizaremos antes
+      esta política y solicitaremos el consentimiento que corresponda.
     </p>
 
-    <h2>10. Contacto</h2>
+    <h2>11. Contacto</h2>
     <p>
       Si tienes preguntas sobre esta Política de Privacidad o sobre el tratamiento de tus
       datos, escríbenos a:
@@ -249,7 +218,7 @@
     </p>
 
     <footer>
-      © 2026 Time2Bar. Todos los derechos reservados.
+      © 2026 Jarilla Labs · Time2Bar. Todos los derechos reservados.
     </footer>
   </div>
 </body>
