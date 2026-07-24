@@ -23,7 +23,7 @@
       "date": "2026-07-20T18:30:00+02:00",
       "name": "Tirón A",
       "exercises": [
-        { "externalExerciseId": "pull-up", "name": "Dominadas", "sets": [
+        { "externalExerciseId": "pull-up", "name": "Dominadas", "rpe": 8, "notes": "Técnica limpia", "sets": [
           { "setIndex": 0, "status": "completed", "reps": 8, "loadKg": 10 },
           { "setIndex": 1, "status": "completed", "reps": 7, "loadKg": 10 }
         ] }

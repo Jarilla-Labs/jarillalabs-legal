@@ -195,7 +195,7 @@
         <div class="step">
           <div>
             <h3>Pega o adjunta tu historial</h3>
-            <p>Puedes usar notas, CSV, una hoja de cálculo exportada o texto. Revisa los avisos; el skill no debe inventar fechas ni valores.</p>
+            <p>Puedes usar notas, CSV, una hoja de cálculo exportada o texto. Si “dif” significa RPE en tus datos, indícalo: se guardará por ejercicio y alimentará sus estadísticas.</p>
           </div>
         </div>
         <div class="step">
@@ -227,9 +227,14 @@
         </article>
         <article class="card">
           <h3>Historial</h3>
-          <p>Fecha, sesión, ejercicio, serie, reps, lastre, holds, RPE y notas.</p>
+          <p>Fecha, sesión, ejercicio, serie, reps, lastre, holds, RPE y notas por ejercicio.</p>
           <a class="button" href="downloads/time2bar-history-template.csv" download>Descargar plantilla</a>
         </article>
+      </div>
+      <div class="notice">
+        Usa <code>rpe_ejercicio</code> para el esfuerzo 1–10 de cada ejercicio y
+        <code>notas_ejercicio</code> para técnica, molestias o variantes. El RPE
+        global de sesión queda solo como compatibilidad histórica.
       </div>
     </section>
 

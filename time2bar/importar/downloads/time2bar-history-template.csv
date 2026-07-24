@@ -1,2 +1,2 @@
-fecha,hora_local,sesion,ejercicio,serie,estado_serie,reps,peso_kg,isometria_s,exito,rpe,notas
-2026-07-20,18:30,Tirón A,Dominadas,1,completed,8,10,,,,
+fecha,hora_local,sesion,ejercicio,serie,estado_serie,reps,peso_kg,isometria_s,exito,rpe_ejercicio,notas_ejercicio,notas_sesion
+2026-07-20,18:30,Tirón A,Dominadas,1,completed,8,10,,,8,Técnica limpia,
