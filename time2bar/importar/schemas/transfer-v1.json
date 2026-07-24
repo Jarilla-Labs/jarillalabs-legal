@@ -104,6 +104,12 @@
                   "description": "RPE 1–10 de este ejercicio en esta sesión."
                 },
                 "notes": { "type": "string", "maxLength": 2000 },
+                "restSeconds": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 3600,
+                  "description": "Descanso planificado entre series de este ejercicio; no es descanso real medido."
+                },
                 "sets": {
                   "type": "array",
                   "maxItems": 100,
