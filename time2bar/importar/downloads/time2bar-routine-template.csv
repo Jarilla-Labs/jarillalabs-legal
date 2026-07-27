@@ -1,3 +1,4 @@
-rutina,orden,ejercicio,tipo,series,reps_min,reps_max,hold_s,lastre_kg,descanso_s
-Tirón A,1,Dominadas,reps,4,5,8,,10,120
-Tirón A,2,Front lever tuck,hold,4,,,12,,120
+rutina,orden,ejercicio,tipo,estructura,series,reps_min,reps_max,hold_s,total_s_min,total_s_max,lastre_kg,descanso_s,notas_ejercicio
+Tirón A,1,Dominadas,reps,fixed_sets,4,5,8,,,,10,120,Técnica limpia
+Tirón A,2,Front lever tuck,hold,fixed_sets,4,,,12,,,,120,
+Tirón A,3,Dead hang,hold,accumulation,,,,,90,150,,,Acumular tiempo con buena forma

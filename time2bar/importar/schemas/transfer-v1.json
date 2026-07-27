@@ -56,12 +56,16 @@
                 "name": { "type": "string", "minLength": 1, "maxLength": 120 },
                 "order": { "type": "integer", "minimum": 0 },
                 "performanceType": { "enum": ["reps", "hold", "attempt"] },
+                "structure": { "enum": ["fixed_sets", "accumulation"] },
                 "setCount": { "type": "integer", "minimum": 1, "maximum": 50 },
                 "targetRepsMin": { "type": "integer", "minimum": 0, "maximum": 1000 },
                 "targetRepsMax": { "type": "integer", "minimum": 0, "maximum": 1000 },
                 "targetHoldSeconds": { "type": "number", "minimum": 0, "maximum": 86400 },
+                "targetTotalSecondsMin": { "type": "number", "minimum": 0, "maximum": 86400 },
+                "targetTotalSecondsMax": { "type": "number", "minimum": 0, "maximum": 86400 },
                 "targetLoadKg": { "type": "number", "minimum": 0, "maximum": 1000 },
-                "restSeconds": { "type": "number", "minimum": 0, "maximum": 3600 }
+                "restSeconds": { "type": "number", "minimum": 0, "maximum": 3600 },
+                "notes": { "type": "string", "maxLength": 2000 }
               }
             }
           }
@@ -80,6 +84,7 @@
           "date": { "type": "string", "format": "date-time" },
           "name": { "type": "string", "maxLength": 160 },
           "durationSeconds": { "type": "number", "minimum": 0, "maximum": 86400 },
+          "status": { "enum": ["completed", "partial", "abandoned"] },
           "rpe": {
             "type": "number",
             "minimum": 1,
@@ -122,7 +127,26 @@
                       "reps": { "type": "number", "minimum": 0, "maximum": 10000 },
                       "loadKg": { "type": "number", "minimum": 0, "maximum": 1000 },
                       "holdSeconds": { "type": "number", "minimum": 0, "maximum": 86400 },
-                      "success": { "type": "boolean" }
+                      "success": { "type": "boolean" },
+                      "actualWorkSeconds": { "type": "number", "minimum": 0, "maximum": 86400 },
+                      "rpe": { "type": "number", "minimum": 1, "maximum": 10 },
+                      "rir": { "type": "number", "minimum": 0, "maximum": 10 },
+                      "notes": { "type": "string", "maxLength": 2000 },
+                      "customValues": {
+                        "type": "object",
+                        "maxProperties": 50,
+                        "propertyNames": { "maxLength": 80 },
+                        "additionalProperties": {
+                          "oneOf": [
+                            { "type": "number" },
+                            { "type": "string", "maxLength": 2000 },
+                            { "type": "boolean" }
+                          ]
+                        }
+                      },
+                      "captureStatus": { "enum": ["pending", "reviewed"] },
+                      "completedAtMs": { "type": "number", "minimum": 0 },
+                      "legacyAggregate": { "type": "boolean" }
                     }
                   }
                 }
