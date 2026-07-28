@@ -26,8 +26,17 @@
         "additionalProperties": false,
         "required": ["name", "metric"],
         "properties": {
-          "externalId": { "type": "string", "maxLength": 200 },
-          "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+          "externalId": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "Identidad estable del ejercicio en la fuente. Todas sus referencias deben reutilizarla."
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "description": "Nombre canónico de esta identidad dentro del documento."
+          },
           "aliases": { "type": "array", "maxItems": 20, "items": { "type": "string", "maxLength": 120 } },
           "metric": { "enum": ["reps", "hold_seconds", "load_kg", "attempt"] }
         }
@@ -52,8 +61,17 @@
               "additionalProperties": false,
               "required": ["name", "order"],
               "properties": {
-                "externalExerciseId": { "type": "string", "maxLength": 200 },
-                "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+                "externalExerciseId": {
+                  "type": "string",
+                  "maxLength": 200,
+                  "description": "Debe resolver el externalId de un ejercicio superior cuando se proporcione."
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "Debe coincidir con el nombre canónico de la identidad referenciada."
+                },
                 "order": { "type": "integer", "minimum": 0 },
                 "performanceType": { "enum": ["reps", "hold", "attempt"] },
                 "structure": { "enum": ["fixed_sets", "accumulation"] },
@@ -100,8 +118,17 @@
               "additionalProperties": false,
               "required": ["name", "sets"],
               "properties": {
-                "externalExerciseId": { "type": "string", "maxLength": 200 },
-                "name": { "type": "string", "minLength": 1, "maxLength": 120 },
+                "externalExerciseId": {
+                  "type": "string",
+                  "maxLength": 200,
+                  "description": "Debe resolver el externalId de un ejercicio superior cuando se proporcione."
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "Debe coincidir con el nombre canónico de la identidad referenciada."
+                },
                 "rpe": {
                   "type": "number",
                   "minimum": 1,
