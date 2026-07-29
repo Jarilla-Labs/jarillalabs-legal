@@ -82,7 +82,7 @@
   <div class="wrap">
     <header>
       <h1>Política de Privacidad de Time2Bar</h1>
-      <p class="meta">Última actualización: 23 de julio de 2026</p>
+      <p class="meta">Última actualización: 29 de julio de 2026</p>
     </header>
 
     <p>
@@ -95,8 +95,10 @@
       <strong>Resumen rápido:</strong> la versión pública actual de Time2Bar funciona
       localmente. Tus rutinas, entrenamientos, notas y progresos permanecen en tu
       dispositivo. No crea cuentas nuevas, no sincroniza con la nube, no incluye compras
-      dentro de la App y no envía Analytics ni informes de Crashlytics. No vendemos tus
-      datos personales.
+      dentro de la App y no envía informes de errores. Solo si lo aceptas
+      expresamente enviamos <strong>estadísticas de uso anónimas</strong> —nunca el
+      contenido de tus entrenamientos— y puedes desactivarlas cuando quieras. No
+      vendemos tus datos personales.
     </div>
 
     <h2>1. Quién es el responsable</h2>
@@ -115,8 +117,10 @@
       <li>Copias de seguridad que tú decides exportar o restaurar.</li>
     </ul>
     <p>
-      Estos datos no salen del dispositivo por defecto y permanecen allí hasta que los
-      borres desde Android o desinstales Time2Bar.
+      Ninguno de estos datos sale nunca del dispositivo por sí solo: permanecen allí hasta
+      que los borres desde Android o desinstales Time2Bar. Solo salen cuando tú los envías
+      —al exportar un historial o compartir una copia de seguridad—. La analítica opcional
+      descrita en el apartado 4 <strong>no incluye</strong> ninguno de estos contenidos.
     </p>
 
     <h2>3. Datos que no recoge la versión pública actual</h2>
@@ -130,8 +134,12 @@
           <td>No se crean cuentas nuevas ni se envían rutinas o historial a Firebase.</td>
         </tr>
         <tr>
-          <td>Analítica y errores</td>
-          <td>No se envían eventos de Analytics ni informes de Crashlytics.</td>
+          <td>Informes de errores</td>
+          <td>No se incluye el SDK de Crashlytics: no se envían fallos, trazas ni diagnósticos.</td>
+        </tr>
+        <tr>
+          <td>Contenido de tus entrenamientos</td>
+          <td>Nombres de rutinas y ejercicios, notas, RPE, resultados e historial no se envían a ningún servidor, ni siquiera con la analítica activada.</td>
         </tr>
         <tr>
           <td>Compras</td>
@@ -144,7 +152,107 @@
       </tbody>
     </table>
 
-    <h2>4. Permisos y funciones locales</h2>
+    <h2>4. Analítica de uso opcional</h2>
+    <p>
+      Al terminar la configuración inicial te preguntamos una sola vez si quieres ayudarnos
+      a mejorar la App compartiendo estadísticas de uso. <strong>La recogida está
+      desactivada mientras no respondas «sí»</strong>: si dices «no, gracias» o cierras la
+      App antes de responder, no se envía nada. Ambas respuestas dejan la App funcionando
+      exactamente igual.
+    </p>
+
+    <h3>Qué se envía</h3>
+    <p>
+      Los eventos que registra la propia App salen de un catálogo cerrado y con valores
+      predefinidos. A modo de ejemplo: que empezaste o terminaste un entrenamiento, si quedó completo o a medias, cuántas
+      series estaban previstas y cuántas registraste, en qué franja de duración cayó
+      —menos de 5 minutos, 5–15, 15–30…—, si consultaste el progreso, si creaste o
+      lograste una meta, si exportaste el historial o restauraste una copia, y si la App
+      tuvo que recuperarse de un almacenamiento dañado o lleno.
+    </p>
+    <p>
+      Cada evento va acompañado de la versión de la App y de la plataforma, y de un
+      <strong>identificador de instalación</strong> generado por Firebase que permite
+      distinguir dispositivos sin identificarte a ti. Ese identificador desaparece si
+      borras los datos de la App o la desinstalas.
+    </p>
+    <p>
+      A esos eventos se suman los que el SDK de Google Analytics registra automáticamente y
+      que no dependen de nuestro código: la primera apertura de la App, el inicio y el tiempo
+      de cada sesión de uso, y las actualizaciones, desinstalaciones o cambios de versión del
+      sistema operativo. Junto a ellos, Google asocia de forma automática el modelo de
+      dispositivo, la versión del sistema operativo y el idioma configurado.
+    </p>
+
+    <h3>Qué no se envía nunca</h3>
+    <ul>
+      <li>Nombres de rutinas, de ejercicios o de etiquetas.</li>
+      <li>Notas, RPE, repeticiones, tiempos, lastre ni ningún resultado concreto.</li>
+      <li>Tu historial, tus copias de seguridad ni los archivos que importes.</li>
+      <li>Texto libre de cualquier tipo, mensajes de error, trazas ni rutas de archivo.</li>
+      <li>Nombre, correo electrónico ni identificador publicitario.</li>
+      <li>
+        Tu ubicación: la App no pide el permiso de localización ni accede al GPS. Google sí
+        deduce el país a partir de la dirección IP con la que se conecta el dispositivo, una
+        dirección que nosotros no consultamos ni almacenamos.
+      </li>
+    </ul>
+    <p>
+      Esta restricción no depende de nuestra buena voluntad: antes de enviar cualquier evento
+      propio, la App lo valida contra ese catálogo y descarta cualquier campo que no esté
+      enumerado, incluso si un error de programación intentara incluirlo. Los eventos
+      automáticos descritos más arriba los genera el SDK de Google y tampoco contienen
+      ninguno de estos datos.
+    </p>
+
+    <h3>Quién lo trata y dónde</h3>
+    <p>
+      Usamos <strong>Google Analytics para Firebase</strong>. Google actúa como encargado
+      del tratamiento por cuenta de Jarilla Labs y puede tratar los datos en servidores
+      situados fuera del Espacio Económico Europeo, amparándose en las cláusulas
+      contractuales tipo de la Comisión Europea y en los mecanismos de transferencia
+      publicados en las
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">condiciones de privacidad de Firebase</a>.
+      No usamos estos datos para publicidad ni los combinamos con otras fuentes, y la
+      recogida del identificador publicitario está desactivada en la App.
+    </p>
+
+    <h3>Base legal, conservación y cómo retirarlo</h3>
+    <p>
+      La base legal es tu <strong>consentimiento</strong> (artículo 6.1.a del RGPD). La
+      finalidad es entender qué funciones se usan para decidir qué corregir y qué construir
+      después; no elaboramos perfiles ni tomamos decisiones automatizadas sobre ti.
+    </p>
+    <!--
+      REVISAR ANTES DE PUBLICAR: las dos cifras de abajo tienen que coincidir con el ajuste
+      real de la propiedad de Google Analytics (Administrar → Recopilación y modificación de
+      datos → Conservación de datos). Son dos controles distintos: «datos de eventos» y
+      «datos de usuario», cada uno con opciones de 2 o 14 meses. Configuración actual:
+      eventos 2 meses, usuario 14 meses. El conmutador «Restablecer los datos de usuario con
+      cada actividad nueva» debe permanecer DESACTIVADO; si se activase, el plazo de 14 meses
+      se reiniciaría con cada evento y la frase de abajo dejaría de ser cierta.
+
+      Señales de Google: DESACTIVADO (verificado el 29/07/2026). Si alguna vez se activa,
+      Google retiene esos datos 26 meses al margen de los ajustes de conservación y decae la
+      afirmación de «no usamos estos datos para publicidad» del apartado «Quién lo trata y
+      dónde»; habría que revisar ambos párrafos antes de tocar ese interruptor.
+    -->
+    <p>
+      Google Analytics aplica dos plazos distintos. El detalle de cada evento se conserva un
+      máximo de <strong>2 meses</strong>. Los datos asociados al identificador de instalación
+      se conservan un máximo de <strong>14 meses</strong> desde la última actividad, y ese
+      plazo no se prorroga aunque sigas usando la App. Quedan fuera de ambos plazos los
+      informes agregados, que no permiten identificar ninguna instalación concreta.
+    </p>
+    <p>
+      Puedes retirar el consentimiento en cualquier momento desde
+      <strong>Ajustes → Privacidad y diagnóstico → Analítica de uso</strong>. El envío se
+      detiene de inmediato, sin reiniciar la App. Retirarlo no afecta a la licitud del
+      tratamiento anterior; si quieres además la supresión de lo ya recogido, escríbenos y
+      la solicitaremos a Google.
+    </p>
+
+    <h2>5. Permisos y funciones locales</h2>
     <ul>
       <li><strong>Notificaciones:</strong> avisos locales de los cambios de fase del timer.</li>
       <li><strong>Alarmas y recordatorios:</strong> puntualidad de esos avisos con el dispositivo en reposo.</li>
@@ -155,7 +263,7 @@
       permisos desde Ajustes de Time2Bar y desde los ajustes de Android.
     </p>
 
-    <h2>5. Exportación y soporte</h2>
+    <h2>6. Exportación y soporte</h2>
     <p>
       Compartir un historial o una copia de seguridad solo ocurre tras una acción explícita
       tuya. El archivo pasa entonces a la aplicación o destino que elijas. Si escribes a
@@ -172,7 +280,7 @@
       ni recibe ese envío.
     </p>
 
-    <h2>6. Usuarios de versiones beta anteriores</h2>
+    <h2>7. Usuarios de versiones beta anteriores</h2>
     <p>
       Algunas betas anteriores permitieron cuenta, sincronización y Premium. La versión
       pública actual no activa esos servicios, pero puedes solicitar la eliminación de una
@@ -180,14 +288,17 @@
       <a href="/time2bar/eliminar-cuenta/">procedimiento de borrado</a>.
     </p>
 
-    <h2>7. Conservación y tus derechos</h2>
+    <h2>8. Conservación y tus derechos</h2>
     <p>
-      Los datos locales permanecen en tu dispositivo hasta que los borres. Si conservamos
-      datos de una cuenta beta anterior, puedes solicitar su acceso, rectificación,
-      supresión, limitación, oposición o portabilidad escribiendo a
+      Los datos locales permanecen en tu dispositivo hasta que los borres. La analítica
+      opcional se conserva según el apartado 4. Si conservamos datos de una cuenta beta
+      anterior, puedes solicitar su acceso, rectificación, supresión, limitación, oposición
+      o portabilidad escribiendo a
       <a href="mailto:cherrejim@gmail.com">cherrejim@gmail.com</a>. También puedes retirar
-      un consentimiento previo y reclamar ante la autoridad de protección de datos que te
-      corresponda.
+      en cualquier momento el consentimiento de la analítica —desde los propios Ajustes de
+      la App— y reclamar ante la autoridad de protección de datos que te corresponda; en
+      España, la
+      <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>.
     </p>
     <p>
       Aplicamos medidas técnicas razonables para proteger los datos bajo nuestro control.
@@ -195,7 +306,7 @@
       tu dispositivo y guardar los backups en un lugar de confianza.
     </p>
 
-    <h2>8. Google Play y enlaces externos</h2>
+    <h2>9. Google Play y enlaces externos</h2>
     <p>
       Google Play trata los datos necesarios para distribuir, instalar y actualizar la
       App conforme a su propia
@@ -211,23 +322,30 @@
       Play. Time2Bar no copia ese contenido a un servicio propio.
     </p>
 
-    <h2>9. Privacidad de los menores</h2>
+    <h2>10. Privacidad de los menores</h2>
     <p>
       Time2Bar está dirigida a personas de 16 años o más y no está diseñada para niños.
       La versión pública actual no crea cuentas ni recopila de forma consciente datos
-      personales de menores. Si crees que un menor nos ha proporcionado datos personales
-      mediante soporte o una cuenta beta anterior, contáctanos y los eliminaremos.
+      personales de menores; la analítica opcional del apartado 4 no recoge datos
+      identificativos de ninguna persona. Si crees que un menor nos ha proporcionado datos
+      personales mediante soporte o una cuenta beta anterior, contáctanos y los
+      eliminaremos.
     </p>
 
-    <h2>10. Cambios en esta política</h2>
+    <h2>11. Cambios en esta política</h2>
     <p>
       Podemos actualizar esta Política de Privacidad ocasionalmente. Publicaremos cualquier
       cambio en esta página y modificaremos la fecha de «Última actualización». Si una
-      versión futura reactivase cuenta, nube, compras o telemetría, actualizaremos antes
-      esta política y solicitaremos el consentimiento que corresponda.
+      versión futura reactivase cuenta, nube, compras o informes de errores, actualizaremos
+      antes esta política y solicitaremos el consentimiento que corresponda.
+    </p>
+    <p>
+      Cambio del 29 de julio de 2026: se añadió el apartado 4, que describe la analítica de
+      uso anónima y opcional introducida en la versión 1.0.0-beta.9. Antes de esa versión la
+      App no enviaba ningún dato a Firebase.
     </p>
 
-    <h2>11. Contacto</h2>
+    <h2>12. Contacto</h2>
     <p>
       Si tienes preguntas sobre esta Política de Privacidad o sobre el tratamiento de tus
       datos, escríbenos a:
