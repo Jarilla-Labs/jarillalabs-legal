@@ -10,6 +10,7 @@ estático vía GitHub Pages bajo `www.jarillalabs.com`.
 /time2bar/importar/            → Plantillas, skill y contrato de importación
 /time2bar/privacidad/          → Política de privacidad de Time2Bar
 /time2bar/eliminar-cuenta/     → Eliminación de cuenta y datos de Time2Bar
+/time2bar-timer/privacidad/    → Política de privacidad de Time2Bar Timer
 /flipbots/privacidad/          → Política de privacidad de FlipBots
 ```
 
